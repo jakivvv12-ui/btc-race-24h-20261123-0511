@@ -9,8 +9,8 @@
 // money, while buying the trend early and holding made ~$32. So this bot trades
 // rarely and only with the trend behind it:
 //
-//   - Entry: the 15-bar return tops 20 bps AND the close sits above EMA(48) AND
-//     EMA(12) sits above EMA(48), i.e. a genuine uptick inside a rising uptrend,
+//   - Entry: the 15-bar return tops 20 bps AND the close sits above EMA(30) AND
+//     EMA(10) sits above EMA(30), i.e. a genuine uptick inside a rising uptrend,
 //     not a wiggle in chop.
 //   - Exit: a 2% trailing stop off the best close since entry (a crash guard), or a
 //     10% equity drawdown from the peak (far inside the race window's 25% guardrail).
@@ -30,9 +30,9 @@ const MOM_LOOKBACK = 15;
 /** Entry needs a 15-bar return above 20 bps (0.002). */
 const MOM_THR = 0.002;
 /** The slow trend filter: the close must sit above this EMA to enter. */
-const SLOW_BARS = 48;
+const SLOW_BARS = 30;
 /** The fast EMA: it must sit above the slow one, so the trend is rising, not just high. */
-const FAST_BARS = 12;
+const FAST_BARS = 10;
 /** A 2% trailing stop off the best close since entry. */
 const TRAIL_PCT = 0.02;
 /** Flatten if equity falls 10% from its peak. */
